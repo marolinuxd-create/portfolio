@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact — Marolin Solano</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .ct-hero { padding: clamp(56px, 8vw, 120px) 0 clamp(40px, 6vw, 80px); }
+  .ct-hero h1 { max-width: 14ch; }
+  .ct-hero .lead { max-width: 56ch; margin-top: 28px; }
+
+  .ct-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr;
+    gap: clamp(32px, 5vw, 80px);
+    padding-block: clamp(32px, 5vw, 64px);
+    border-top: 1px solid var(--rule);
+  }
+  @media (max-width: 820px) { .ct-grid { grid-template-columns: 1fr; } }
+
+  form { display: grid; gap: 20px; }
+  .field { display: grid; gap: 8px; }
+  .field label {
+    font-family: var(--f-mono); font-size: 11px; color: var(--fg-3);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .field input, .field textarea, .field select {
+    border: 0; border-bottom: 1px solid var(--rule);
+    background: transparent; padding: 10px 0; font: inherit; color: var(--fg);
+    transition: border-color var(--t-fast);
+    font-size: 17px;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus {
+    outline: none; border-color: var(--accent);
+  }
+  .field textarea { min-height: 140px; resize: vertical; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 600px) { .field-row { grid-template-columns: 1fr; } }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip-row label {
+    cursor: pointer; padding: 8px 14px; border: 1px solid var(--rule); border-radius: 999px;
+    font-family: var(--f-mono); font-size: 12px; color: var(--fg-2);
+    transition: all var(--t-fast);
+  }
+  .chip-row input { display: none; }
+  .chip-row input:checked + span,
+  .chip-row label:has(input:checked) {
+    background: var(--fg); color: var(--bg); border-color: var(--fg);
+  }
+
+  .submit-row {
+    display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+    margin-top: 8px;
+  }
+  .form-status {
+    font-family: var(--f-mono); font-size: 12px; color: var(--accent);
+  }
+
+  .ct-side { display: grid; gap: 32px; align-content: start; }
+  .ct-card {
+    border: 1px solid var(--rule); border-radius: var(--r-md); padding: 24px;
+  }
+  .ct-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+  .ct-card p { font-size: 14px; color: var(--fg-2); }
+  .ct-card a { color: var(--accent); }
+
+  .ct-direct {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+  .ct-direct a, .ct-direct p { color: #fff; }
+  .ct-direct h4 { color: #fff; }
+
+  .ct-faq { padding-block: clamp(48px, 6vw, 96px); border-top: 1px solid var(--rule); }
+  .ct-faq h2 { max-width: 16ch; margin-bottom: 32px; }
+  .faq { border-top: 1px solid var(--rule); }
+  .faq summary {
+    list-style: none; cursor: pointer;
+    padding: 24px 0; display: flex; justify-content: space-between; align-items: center;
+    font-size: 18px; font-weight: 500;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: '+'; font-family: var(--f-mono); font-size: 20px; color: var(--accent);
+    transition: transform var(--t-fast);
+  }
+  .faq[open] summary::after { content: '–'; }
+  .faq:last-of-type { border-bottom: 1px solid var(--rule); }
+  .faq-body { padding: 0 0 24px; max-width: 70ch; color: var(--fg-2); font-size: 16px; line-height: 1.6; }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<div data-chrome="nav"></div>
+
+<main id="main">
+  <section class="container ct-hero">
+    <span class="eyebrow reveal">Contact</span>
+    <h1 class="reveal" style="margin-top: 24px;" data-i18n="contact.title">Let's make something useful.</h1>
+    <p class="lead reveal" data-i18n="contact.lead">Tell me about your team, your timeline, or the problem keeping you up at night. I'll get back within a day.</p>
+  </section>
+
+  <section class="container">
+    <div class="ct-grid">
+      <form id="contactForm" class="reveal" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="company">Company / team</label>
+          <input id="company" name="company" type="text" />
+        </div>
+
+        <div class="field">
+          <label>What's this about? <span style="text-transform: none; color: var(--fg-4);">(pick any)</span></label>
+          <div class="chip-row">
+            <label><input type="checkbox" name="topic" value="role"/><span class="chip">Full-time role</span></label>
+            <label><input type="checkbox" name="topic" value="contract"/><span class="chip">Contract project</span></label>
+            <label><input type="checkbox" name="topic" value="advisory"/><span class="chip">Advisory / coaching</span></label>
+            <label><input type="checkbox" name="topic" value="research"/><span class="chip">Research collab</span></label>
+            <label><input type="checkbox" name="topic" value="other"/><span class="chip">Just saying hi</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">The brief</label>
+          <textarea id="message" name="message" placeholder="What problem are we solving? Timeline? Anything I should know up front?" required></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary">
+            <span>Send message</span>
+            <span class="arrow">↗</span>
+          </button>
+          <span id="status" class="form-status" role="status"></span>
+        </div>
+      </form>
+
+      <aside class="ct-side reveal">
+        <div class="ct-card ct-direct">
+          <h4>Prefer email?</h4>
+          <p>I read every message and reply within 24 hours.</p>
+          <p style="margin-top: 12px;"><a href="mailto:marolinsolanoblanco@gmail.com">marolinuxd@gmail.com</a></p>
+        </div>
+
+        <div class="ct-card">
+          <h4>Where I am</h4>
+          <p>Toronto, Canada · open to remote or hybrid across North America and EMEA.</p>
+        </div>
+
+        <div class="ct-card">
+          <h4>Find me elsewhere</h4>
+          <p style="display: grid; gap: 8px; margin-top: 8px;">
+            <a href="https://www.linkedin.com/in/marolinsolano/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="container ct-faq">
+    <span class="eyebrow reveal">Common questions</span>
+    <h2 class="reveal" style="margin-top: 14px;">Things recruiters usually ask first.</h2>
+
+    <details class="faq" open>
+      <summary>Are you open to relocation?</summary>
+      <div class="faq-body">Yes. I'm based in Toronto and open to relocating for the right team Canada, US, or EMEA. I'm also comfortable with remote-first roles operating across time zones.</div>
+    </details>
+    <details class="faq">
+      <summary>What kind of role are you looking for?</summary>
+      <div class="faq-body">Senior Product Designer or UX Designer roles where research is taken seriously and impact is measured. Bonus points for teams shipping mobile + desktop, working in regulated industries, or building 0→1 products.</div>
+    </details>
+    <details class="faq">
+      <summary>Do you work in English and Spanish?</summary>
+      <div class="faq-body">Yes, I'm a native Spanish speaker and work day-to-day in English. I've led research interviews in both languages and can run workshops bilingually if needed.</div>
+    </details>
+    <details class="faq">
+      <summary>What's your notice period?</summary>
+      <div class="faq-body">I’m ready for my next challenge and available to start immediately, with just a brief notice period needed with my current company. I can move quickly when the opportunity feels like the right fit.</div>
+    </details>
+    <details class="faq">
+      <summary>Can I see more work?</summary>
+      <div class="faq-body">Some projects (especially Bancolombia) are under NDA and not on this site. Happy to share more in an interview just ask.</div>
+    </details>
+  </section>
+</main>
+
+<div data-chrome="footer"></div>
+<script src="app.js"></script>
+<script src="chrome.js"></script>
+<script>window.renderChrome('contact');</script>
+
+<script>
+(function(){
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('status');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    if (!data.get('name') || !data.get('email') || !data.get('message')) {
+      status.textContent = 'Please fill in name, email, and the brief.';
+      status.style.color = 'var(--accent)';
+      return;
+    }
+    status.textContent = 'Sending…';
+    status.style.color = 'var(--fg-3)';
+    setTimeout(() => {
+      status.textContent = "Got it — I'll reply within 24 hours. ↗";
+      status.style.color = 'var(--accent)';
+      form.reset();
+    }, 600);
+  });
+})();
+</script>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tweaks-portfolio.jsx"></script>
+</body>
+</html>

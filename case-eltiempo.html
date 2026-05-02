@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>El Tiempo · Subscription Paywall — Marolin Solano</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="case-study.css" />
+<style>
+  .et-cover { background: linear-gradient(135deg, #0E0E0E 0%, #2A2A26 100%); }
+  .et-cover::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(242,120,75,.45), transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(61,121,242,.30), transparent 50%);
+  }
+  .et-cover .inner {
+    position: relative; z-index: 1;
+    width: 100%; height: 100%;
+    display: grid; place-items: center; padding: 32px;
+    color: #fff; text-align: center;
+  }
+  .et-cover .inner b {
+    display: block; font-family: var(--f-display); font-size: clamp(56px, 7vw, 120px);
+    font-weight: 400; letter-spacing: -0.03em; line-height: 1;
+  }
+  .et-cover .inner b em { color: var(--accent-2); font-style: normal; }
+  .et-cover .inner span { display: block; font-family: var(--f-mono); font-size: 12px; opacity: 0.7; margin-top: 16px; letter-spacing: 0.08em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<div data-chrome="nav"></div>
+
+<main id="main">
+  <article>
+    <section class="container cs-hero">
+      <a class="cs-back" href="index.html#work">← Back to work</a>
+      <span class="eyebrow reveal">Case 01 · 2020 — 2021 · El Tiempo</span>
+      <h1 class="reveal" style="margin-top: 24px; max-width: 16ch;">How we turned a 100-year-old newspaper into a <span style="color: #ff6b35; font-weight: 600;">100,000-subscriber digital business</span> in 12 months.</h1>
+      <p class="lead reveal" style="margin-top: 32px; max-width: 60ch;">
+        El Tiempo's print revenue collapsed during the pandemic. We had a year to design a paywall and plans that would convert habitual readers into paying subscribers without breaking the trust 100 years of journalism had built.
+      </p>
+
+      <dl class="cs-meta reveal">
+        <div><dt>Role</dt><dd>UX Researcher & Designer<br/>(subscription plans + paywall)</dd></div>
+        <div><dt>Team</dt><dd>2 UX research · 1 UX · 1 UI<br/>3 dev · 1 PM</dd></div>
+        <div><dt>Timeline</dt><dd>Q4 2020 → Q4 2021<br/>(12 months)</dd></div>
+        <div><dt>Outcome</dt><dd><b>100,000 subs in year 1</b><br/>3.3× the 30K target</dd></div>
+      </dl>
+
+      <div class="cs-cover-big et-cover reveal">
+        <div class="inner">
+          <b>EL <em>TIEMPO</em></b>
+          <span>Subscription paywall · Casa Editorial El Tiempo · 2021</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="container cs-section">
+      <div class="cs-grid-2">
+        <div class="reveal"><span class="lbl">01 · Problem</span></div>
+        <div class="reveal">
+          <h2>A century of trust, suddenly without a business model.</h2>
+          <div class="body">
+            <p>El Tiempo had been Colombia's #1 newspaper since 1911. The pandemic flipped two numbers at the same time: <strong>page views on eltiempo.com soared</strong>, while <strong>print circulation the actual revenue engine collapsed</strong>.</p>
+            <p>The team had loyal readers, but no easy way to ask them to pay. Earlier soft attempts at metered access had felt punitive and confused both readers and the sales team. We needed a real subscription product, not a wall.</p>
+          </div>
+          <div class="cs-callout">
+            <div class="l">The brief, in one line</div>
+            <p>Convert 30,000 readers into paying digital subscribers in year 1 — without alienating the audience that made El Tiempo what it is.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROLE -->
+    <section class="container cs-section">
+      <div class="cs-grid-2">
+        <div class="reveal"><span class="lbl">02 · My role</span></div>
+        <div class="reveal">
+          <h2>Lead the research, then design the product around what we learned.</h2>
+          <div class="body">
+            <p>I owned end-to-end research for the subscription experience and led design on the plans + paywall. I worked alongside another UX researcher, a UI designer, and three developers and partnered closely with editorial, commercial, and the alliances team that owned partner benefits.</p>
+            <p>My specific deliverables: <strong>research plan, archetype definition, plan architecture, paywall flow, and the responsive landing pages</strong> that brought it all together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="container cs-section">
+      <div class="cs-grid-2">
+        <div class="reveal"><span class="lbl">03 · Process</span></div>
+        <div class="reveal">
+          <h2>Research wide, ideate hard, prioritize honestly.</h2>
+          <div class="body"><p>Three phases over 12 months. The work that mattered happened in phase 2 turning <strong>170 raw ideas</strong> into a roadmap the business could actually ship.</p></div>
+
+          <div class="cs-process">
+            <div class="cs-step">
+              <span class="step-n">P.1</span>
+              <div>
+                <h4>Discovery — quant + qual in parallel</h4>
+                <p>We pulled audience behavior from Google Analytics, mapped every business asset and partner alliance, and interviewed key stakeholders to understand what was already on the table.</p>
+                <ul>
+                  <li>Online survey distributed across reader communities (2 weeks)</li>
+                  <li>Remote moderated interviews + cardsorting with <strong>30 users</strong> across 5 archetypes</li>
+                  <li>Stakeholder interviews — editorial, commercial, alliances, tech</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cs-step">
+              <span class="step-n">P.2</span>
+              <div>
+                <h4>Ideation 170 ideas → 70 solutions → 1 roadmap</h4>
+                <p>We ran ideation sessions with stakeholders and translated insights into a backlog of 170 ideas, grouped into 70 solutions across 9 benefit categories: <em>traffic, offers, gifts, events, sales, training,</em> and others. Each was scored on impact vs. effort with the tech team. The result: a phased roadmap and named plans grounded in what users would actually pay for.</p>
+              </div>
+            </div>
+            <div class="cs-step">
+              <span class="step-n">P.3</span>
+              <div>
+                <h4>Design + test iterate on real flows</h4>
+                <p>I sketched, then moved to low-fi wireframes in Adobe XD. After 5 rounds of usability tests we tightened copy and hierarchy, then built hi-fi responsive prototypes for the paywall, plan comparison, and checkout. Microcopy was rewritten with editorial every line had to sound like El Tiempo, not a SaaS startup.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY DECISIONS -->
+    <section class="container cs-section">
+      <div class="cs-grid-2">
+        <div class="reveal"><span class="lbl">04 · Key decisions</span></div>
+        <div class="reveal">
+          <h2>The four trade-offs I'd defend in any review.</h2>
+          <div class="cs-decisions">
+            <div class="cs-decision">
+              <div class="h">Decision 01</div>
+              <h4>Lead with benefits, not features.</h4>
+              <p>Plan cards were re-architected around the partner benefits users said they'd pay for, not the article counts the team initially favored. Article limits stayed in the fine print.</p>
+            </div>
+            <div class="cs-decision">
+              <div class="h">Decision 02</div>
+              <h4>Three plans, not five.</h4>
+              <p>Research showed cognitive overload at 5 tiers. We collapsed to <strong>Basic / Plus / Total</strong>, each anchored to a clear archetype, with a fourth "print + digital" option discoverable but not loud.</p>
+            </div>
+            <div class="cs-decision">
+              <div class="h">Decision 03</div>
+              <h4>Paywall after value, never before.</h4>
+              <p>The wall triggers after the reader has finished an article not before. Conversion went up; complaint volume to support went down.</p>
+            </div>
+            <div class="cs-decision">
+              <div class="h">Decision 04</div>
+              <h4>Plan names came from users.</h4>
+              <p>Stakeholders proposed clever editorial names. Users found them confusing. We tested 8 names with 5 archetypes and shipped the three users could repeat back without prompting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="container cs-section">
+      <div class="cs-grid-2">
+        <div class="reveal"><span class="lbl">05 · Before & after</span></div>
+        <div class="reveal">
+          <h2>The shift readers felt.</h2>
+          <div class="cs-ba">
+            <div class="ba-card before">
+              <span class="tag">Before</span>
+              <h4>"Wait, I have to pay now?"</h4>
+              <p>Metered wall blocked articles mid-scroll. Plans page listed article counts, three CTAs above the fold, no clear differentiation. Cancel rate after first month: high.</p>
+            </div>
+            <div class="ba-card after">
+              <span class="tag">After</span>
+              <h4>"Oh, I get all of this?"</h4>
+              <p>Wall appears after value delivery. Plans organized by archetype with named partner benefits up top. One primary CTA per card. Year-1 retention beat industry benchmarks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="container cs-section">
+      <div class="cs-grid-2">
+        <div class="reveal"><span class="lbl">06 · Impact</span></div>
+        <div class="reveal">
+          <h2>The numbers we promised  then doubled, tripled.</h2>
+          <div class="cs-impact-grid">
+            <div class="cs-impact-cell featured">
+              <span class="num">100K</span>
+              <span class="lbl">digital subscribers, year 1</span>
+            </div>
+            <div class="cs-impact-cell">
+              <span class="num"><em>3.3×</em></span>
+              <span class="lbl">over the original 30K target</span>
+            </div>
+            <div class="cs-impact-cell">
+              <span class="num"><em>30</em></span>
+              <span class="lbl">interviews · 5 archetypes</span>
+            </div>
+            <div class="cs-impact-cell">
+              <span class="num"><em>9</em></span>
+              <span class="lbl">benefit categories shipped</span>
+            </div>
+          </div>
+          <div class="cs-callout" style="margin-top: 32px;">
+            <div class="l">What I'd do differently</div>
+            <p>Validate pricing earlier. We anchored plan prices on commercial assumptions and only stress-tested them in usability tests. A dedicated pricing study in week 4 would've saved two redesigns later.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT -->
+    <section class="container cs-next">
+      <a href="case-bancolombia.html">
+        <div class="l">Next case</div>
+        <h3>Bancolombia · Paper to pixels</h3>
+        <div class="arr">Read case 02 →</div>
+      </a>
+      <a href="case-adn.html">
+        <div class="l">Or</div>
+        <h3>ADN · Free, national, digital</h3>
+        <div class="arr">Read case 03 →</div>
+      </a>
+    </section>
+  </article>
+</main>
+
+<div data-chrome="footer"></div>
+
+<script src="app.js"></script>
+<script src="chrome.js"></script>
+<script>window.renderChrome('work');</script>
+</body>
+</html>
